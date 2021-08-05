@@ -44,7 +44,7 @@ class SPMockContextThrowsTest : Spek({
     val contextMock = ContextMock()
     val functions = Context::class.functions
             .filter { it.visibility == KVisibility.PUBLIC }
-            .filter { it !in ANY_FUNCTIONS + CONTEXT_FINAL_FUNCTIONS }
+            .filter { it as KFunction<Any> !in ANY_FUNCTIONS + CONTEXT_FINAL_FUNCTIONS }
 
     fun getCallArgumentMocks(function: KFunction<*>): Array<Any?> {
         return function.parameters
