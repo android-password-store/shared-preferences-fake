@@ -70,8 +70,8 @@ class SPMockContextThrowsTest : Spek({
 
         functions.forEach { function ->
             context("on $function call") {
-                it("should throw UnsupportedOperationException") {
-                    assertFailsWith<UnsupportedOperationException> {
+                it("should throw RunTimeException") {
+                    assertFailsWith<RuntimeException> {
                         rethrowInvocationTargetExceptionCause {
                             val args = getCallArgumentMocks(function)
                             function.call(contextMock, *args)
