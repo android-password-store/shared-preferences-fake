@@ -65,5 +65,5 @@ dependencies {
 }
 
 signing {
-    useGpgCmd()
+    useInMemoryPgpKeys(property('signingKey'), property('signingPassword'))
 }
